@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Order } from 'src/app/services/http/order.service.i';
 
 @Component({
@@ -8,12 +8,21 @@ import { Order } from 'src/app/services/http/order.service.i';
 })
 export class OrderItemComponent implements OnInit {
   @Input() order!: Order;
+  @Output() onDeleteTask: EventEmitter<string> = new EventEmitter();
+  @Output() onBillingOrder: EventEmitter<string> = new EventEmitter();
 
   constructor() {
   }
 
   ngOnInit(): void {}
 
+  onDelete(order: Order) {
+    this.onDeleteTask.emit(order._id);
+  }
+
+  onPay(order: Order){
+    this.onBillingOrder.emit(order._id);
+  }
 
 
 }

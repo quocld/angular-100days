@@ -1,5 +1,6 @@
 <div class="orders-list_container">
     <div class="orders_box">
+        <app-button (click)="onCreateRandom()">Random Create</app-button>
         <table>
             <!-- <thead>
                 <tr>
@@ -10,7 +11,8 @@
                 </tr>
             </thead> -->
             <tbody>
-                <app-order-item *ngFor="let order of orders" [order]="order"></app-order-item>
+                <app-order-item *ngFor="let order of orders" [order]="order"
+                    (onDeleteTask)="deleteTask(order._id)" (onBillingOrder)="billingOrder(order._id)"></app-order-item>
             </tbody>
         </table>
     </div>

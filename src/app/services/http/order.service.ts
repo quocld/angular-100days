@@ -20,12 +20,20 @@ export class OrderService {
 
   getOrder(): Observable<Order[]> {
     return this.http.get<Order[]>(this.apiUrl);
+
   }
-/* 
-  deleteTask(task: Order): Observable<Order> {
-    const url = `${this.apiUrl}/${task.id}`;
+
+  deleteOrder(order_id: string): Observable<Order> {
+    const url = `${this.apiUrl}/${order_id}`;
     return this.http.delete<Order>(url);
   }
+
+  createRamdom(): Observable<Order> {
+    const url = `${this.apiUrl}/random-create`;
+    return this.http.get<Order>(url);
+  }
+/* 
+  
 
   updateTaskReminder(task: Order): Observable<Order> {
     const url = `${this.apiUrl}/${task.id}`;

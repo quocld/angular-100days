@@ -5,7 +5,9 @@ export interface Order {
 
   paid: boolean;
 
-  createdAt?: Date;
+  createdAt: string;
 
-  updatedAt?: Date;
+  updatedAt?: string;
+
+  __v: number;
 }

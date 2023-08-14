@@ -1,0 +1,17 @@
+<div class="orders-list_container">
+    <div class="orders_box">
+        <table>
+            <!-- <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Quantity</th>
+                    <th>Status</th>
+                    <th>CreatedAt</th>
+                </tr>
+            </thead> -->
+            <tbody>
+                <app-order-item *ngFor="let order of orders" [order]="order"></app-order-item>
+            </tbody>
+        </table>
+    </div>
+</div>

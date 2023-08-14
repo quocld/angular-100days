@@ -1,0 +1,16 @@
+.orders-list_container{
+    width: full;
+    min-height: 100vh;
+    padding: 20px;
+    
+    p{
+        margin: 0;
+    }
+    
+    .orders_box{
+        border: 1px gray solid;
+        padding: 10px 20px 100px 20px;
+        height: fit-content;
+    }
+
+}

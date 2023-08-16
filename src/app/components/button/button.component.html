@@ -1,7 +1,1 @@
-<button
-  [ngStyle]="{ 'background-color': color }"
-  class="btn"
-  (click)="onClick()"
->
-<ng-content></ng-content>
-</button>
+<button mat-flat-button color="primary" class="btn" (click)="onClick()"><ng-content></ng-content></button>

@@ -10,20 +10,24 @@ import { OrderItemComponent } from './components/order-item/order-item.component
 import { OrderService } from './services/http/order.service';
 import { HttpClientModule } from '@angular/common/http';
 import { DateFormatPipe } from './pipes/datePipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CreateOrderComponent } from './components/create-order/create-order.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    ButtonComponent,
     OrdersListComponent,
     OrderItemComponent,
-    DateFormatPipe
+    DateFormatPipe,
   ],
   imports: [
+    CreateOrderComponent,
+    ButtonComponent,
+    HeaderComponent,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [OrderService],
   bootstrap: [AppComponent]

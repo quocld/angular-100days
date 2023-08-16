@@ -11,7 +11,9 @@ import { OrderService } from './services/http/order.service';
 import { HttpClientModule } from '@angular/common/http';
 import { DateFormatPipe } from './pipes/datePipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CreateOrderComponent } from './components/create-order/create-order.component';
+import { CreateOrderDialogComponent } from './components/create-order-dialog/create-order-dialog.component';
+
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,7 @@ import { CreateOrderComponent } from './components/create-order/create-order.com
     DateFormatPipe,
   ],
   imports: [
-    CreateOrderComponent,
+    CreateOrderDialogComponent,
     ButtonComponent,
     HeaderComponent,
     BrowserModule,

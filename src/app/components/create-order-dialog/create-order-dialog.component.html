@@ -1,0 +1,5 @@
+<mat-form-field>
+    <mat-label>Enter quantity to order</mat-label>
+    <input matInput [(ngModel)]="quantity">
+    <app-button (click)="onCreate(quantity)" >Create</app-button>
+</mat-form-field>

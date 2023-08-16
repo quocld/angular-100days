@@ -9,7 +9,10 @@ import { Order } from 'src/app/services/http/order.service.i';
   styleUrls: ['./orders-list.component.scss'],
 })
 export class OrdersListComponent implements OnInit {
-  constructor(private ordersService: OrderService, private bffService: BffService) {}
+  constructor(
+    private ordersService: OrderService,
+    private bffService: BffService
+  ) {}
   orders: Order[] = [];
 
   ngOnInit(): void {
@@ -19,7 +22,12 @@ export class OrdersListComponent implements OnInit {
     });
   }
 
+  refreshOrder() {
+    this.loadOrders();
+  }
+
   loadOrders() {
+    console.log('loadOrder');
     this.ordersService.getOrder().subscribe((orders) => {
       this.orders = orders;
     });
@@ -33,15 +41,15 @@ export class OrdersListComponent implements OnInit {
       );
   }
 
-  onCreateRandom(){
+  onCreateRandom() {
     this.ordersService.createRamdom().subscribe((newOrder) => {
       this.orders = [...this.orders, newOrder];
-    })
+    });
   }
 
-  billingOrder(order_id: string){
+  billingOrder(order_id: string) {
     this.bffService.billing(order_id).subscribe(() => {
-      this.loadOrders()
-    })
+      this.loadOrders();
+    });
   }
 }

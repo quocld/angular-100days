@@ -1,11 +1,13 @@
 <div class="orders-list_container">
     <div class="orders_box">
-        <app-button (click)="onCreateRandom()">Random Create</app-button>
+        <app-create-order-dialog class="create-order" (onLoadOrders)="refreshOrder()"></app-create-order-dialog>
+        <app-button class="random-create" (click)="onCreateRandom()">Random Create</app-button>
         <table>
             <tbody>
                 <app-order-item *ngFor="let order of orders" [order]="order"
                     (onDeleteTask)="deleteTask(order._id)" (onBillingOrder)="billingOrder(order._id)"></app-order-item>
             </tbody>
         </table>
+       
     </div>
 </div>

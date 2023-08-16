@@ -28,19 +28,13 @@ export class OrderService {
     return this.http.delete<Order>(url);
   }
 
+  createOrder(quantity: number): Observable<Order> {
+    const url = `${this.apiUrl}/${quantity}`;
+    return this.http.post<Order>(url,{})
+  }
+
   createRamdom(): Observable<Order> {
     const url = `${this.apiUrl}/random-create`;
     return this.http.get<Order>(url);
   }
-/* 
-  
-
-  updateTaskReminder(task: Order): Observable<Order> {
-    const url = `${this.apiUrl}/${task.id}`;
-    return this.http.put<Order>(url, task, httpOptions);
-  }
-
-  addTask(task: Order): Observable<Order> {
-    return this.http.post<Order>(this.apiUrl, task, httpOptions);
-  } */
 }
